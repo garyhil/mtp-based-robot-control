@@ -71,6 +71,9 @@ class OPCUAServerPEA:
         self.opcua_server.start()
         self._build_opcua_server()
         self._start_subscription()
+    
+    def stop_opcua_server(self):
+        self.opcua_server.stop()
 
     def set_services_in_idle(self):
         for service in self.service_set.values():
