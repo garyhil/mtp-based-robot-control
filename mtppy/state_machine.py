@@ -109,8 +109,8 @@ class StateMachine:
     def state_change(self):
         if self.act_state == StateCodes.starting:
             self._change_state_to(StateCodes.execute)
-        elif self.act_state == StateCodes.starting:
-            self._change_state_to(StateCodes.execute)
+        elif self.act_state == StateCodes.execute:
+            self._change_state_to(StateCodes.completing)
         elif self.act_state == StateCodes.completing:
             self._change_state_to(StateCodes.completed)
         elif self.act_state == StateCodes.pausing:
