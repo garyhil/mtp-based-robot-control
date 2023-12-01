@@ -45,9 +45,9 @@ class MoveService(Service):
         self.movetask = MoveControl(robot=robot,group=group,scene=scene,pose=self.defaultpose,moveSettings=moveSettings,name="target_1")
 
         ### Procedure using joint values (j1 - j7) to move to a specific pose relative to the robots base
-        movejoints_rel2base_procedure = Procedure(procedure_id=1, tag_name="Move via Joint Values to Pose relative to Base KOS",is_self_completing=True, is_default=True)
+        movejoints_rel2base_procedure = Procedure(procedure_id=1, tag_name="MoveViaJoints",is_self_completing=True)
         ### Procedure using Position (x,y,z) and Quaternion(qx,qy,qz,qw) to move to a specific pose relative to the robots base
-        moveposquat_rel2base_procedure = Procedure(procedure_id=2, tag_name="Move via PosQuat Values to Pose relative to Base KOS",is_self_completing=True)
+        moveposquat_rel2base_procedure = Procedure(procedure_id=2, tag_name="MoveViaPosQuat",is_self_completing=True)
 
         ### Required procedure parameters
         moveposquat_rel2base_procedure.add_procedure_parameter(AnaServParam(tag_name="X-Coordinate",  tag_description='', v_min=-0.845, v_max=0.845))
@@ -144,6 +144,7 @@ class MoveService(Service):
             self.state_change()
         else:
             print("no valid Procedure ID")
+
         return
         
     def completing(self):
@@ -289,7 +290,7 @@ class HandService(Service):
         self.movetask = HandControl(robot=robot,group=group,scene=scene,pose=self.defaultpose,moveSettings=moveSettings,name="target_1")
 
         ## Procedure Definition
-        openProcedure = Procedure(procedure_id=1, tag_name="OpenGripper", tag_description='', is_self_completing=True, is_default=True)
+        openProcedure = Procedure(procedure_id=1, tag_name="OpenGripper", tag_description='', is_self_completing=True)
         closeProcedure = Procedure(procedure_id=2, tag_name="CloseGripper", tag_description='', is_self_completing=True)
         ## Procedure Parameters
         openProcedure.add_procedure_parameter(AnaServParam(tag_name='OpeningWidth', tag_description='', v_min=0.001, v_max=0.079, v_unit=1010))
