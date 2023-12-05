@@ -64,7 +64,7 @@ To start the demonstration (we will use the virtual robot) follow theese steps:
 
 You can also control a real Franka-Emika-Panda Robot. However, therefore you need to
 1. Set up a real-time capable Version of Ubuntu as described [here](https://frankaemika.github.io/docs/installation_linux.html#setting-up-the-real-time-kernel)
-2. Install the [Libfranka](https://frankaemika.github.io/docs/installation_linux.html)]and [FrankaROS](https://frankaemika.github.io/docs/installation_linux.html) 
+2. Install the [Libfranka](https://frankaemika.github.io/docs/installation_linux.html) and [FrankaROS](https://frankaemika.github.io/docs/installation_linux.html) 
 3. Connect the Franka Emika to the Computer and activate the [FCI Mode](https://frankaemika.github.io/docs/getting_started.html)
 4. run ```roslaunch franka_example_controllers joint_impedance_example_controller.launch robot_ip:=<fci-ip> load_gripper:=<true|false> robot:=<panda|fr3>``` in your terminal. This should also start the RViz Plug-In and you should see a virtual Franka Emika Panda which mimics the behaviour of your real robot.
 5. Go to point 2. in the step-instructions above.
